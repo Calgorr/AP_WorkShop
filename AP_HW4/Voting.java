@@ -36,17 +36,17 @@ public class Voting {
         }
     }
 
-//    public void vote(Person voter) {
-//        Vote vote = new Vote(voter, "1400/3/20");
-//        ArrayList<String> Choices = getChoices();
-//        Random rand = new Random();
-//        int random = rand.nextInt(Choices.size());
-//        for (Entry<String, HashSet<Vote>> entry : choices.entrySet()) {
-//            if (Choices.get(random).equals(entry.getKey())) {
-//                entry.getValue().add(vote);
-//            }
-//        }
-//    }
+    public void vote(Person voter) {
+        Vote vote = new Vote(voter, "1400/3/20");
+        ArrayList<String> Choices = getChoices();
+        Random rand = new Random();
+        int random = rand.nextInt(Choices.size());
+        for (Entry<String, HashSet<Vote>> entry : choices.entrySet()) {
+            if (Choices.get(random).equals(entry.getKey())) {
+                entry.getValue().add(vote);
+            }
+        }
+    }
 
 
     public void printResults() {
