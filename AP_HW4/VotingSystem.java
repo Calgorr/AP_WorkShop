@@ -36,5 +36,9 @@ public class VotingSystem {
         String question;
         question = votingList.get(index).getQuestion();
         ArrayList<String> choices = votingList.get(index).getChoices();
+        System.out.println(question);
+        for (String choice : choices) {
+            System.out.println(choice);
+        }
     }
 }
