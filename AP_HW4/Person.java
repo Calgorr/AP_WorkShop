@@ -1,4 +1,3 @@
-package com.company;
 
 public class Person {
     private String firstName;
