@@ -9,7 +9,7 @@ import java.util.Random;
 public class Voting {
     private int type;
     private String question;
-    private HashMap<String, HashSet<Vote>> choices;
+    private HashMap<String, HashSet<Vote>> choices = new HashMap<>();
     private boolean isAnonymous;
     private ArrayList<Person> voters;
 
@@ -51,13 +51,17 @@ public class Voting {
 
     public void printResults() {
         for (Entry<String, HashSet<Vote>> entry : choices.entrySet()) {
-            System.out.println(entry.getKey() + " number of people who chose this choice : " + entry.getValue().size());
+            System.out.println(entry.getKey() + " : number of people who chose this choice : " + entry.getValue().size());
         }
     }
 
     public void printVoters() {
         for (Entry<String, HashSet<Vote>> entry : choices.entrySet()) {
-            System.out.println(entry.getKey() + " List of people who chose this choice :\n" + entry.getValue());
+            System.out.print(entry.getKey() + " : List of people who chose this choice :\n");
+            for (Vote vote : entry.getValue()) {
+                System.out.print(vote.getVoter().toString()+" ");
+            }
+            System.out.println();
         }
     }
 

@@ -40,5 +40,6 @@ public class VotingSystem {
         for (String choice : choices) {
             System.out.println(choice);
         }
+        System.out.println();
     }
 }
