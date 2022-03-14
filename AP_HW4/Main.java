@@ -36,7 +36,7 @@ public class Main {
             String order = new String();
             System.out.println("if you want to stop enter 0");
             do {
-                order = input.next();
+                order = input.nextLine();
                 if (order.charAt(0) != '0')
                     order1.add(order);
             } while (order.charAt(0) != '0');
@@ -47,7 +47,7 @@ public class Main {
             ArrayList<String> order1 = new ArrayList<>();
             String order = new String();
             System.out.println("enter your choice");
-            order = input.next();
+            order = input.nextLine();
             if (order.charAt(0) != '0') {
                 order1.add(order);
             }
@@ -59,7 +59,7 @@ public class Main {
             String order = new String();
             System.out.println("if you want to stop enter 0");
             do {
-                order = input.next();
+                order = input.nextLine();
                 if (order.charAt(0) != '0')
                     order1.add(order);
             } while (order.charAt(0) != '0');
@@ -70,7 +70,7 @@ public class Main {
             ArrayList<String> order1 = new ArrayList<>();
             String order = new String();
             System.out.println("enter your choice");
-            order = input.next();
+            order = input.nextLine();
             if (order.charAt(0) != '0') {
                 order1.add(order);
             }
