@@ -1,8 +1,4 @@
-
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.ObjectOutputStream;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -11,6 +7,15 @@ public class Main {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         ArrayList<Note> notes = new ArrayList<>();
+        try (FileInputStream Fin = new FileInputStream("Export\\Notes.txt"); ObjectInputStream in = new ObjectInputStream(Fin)) {
+            notes = (ArrayList<Note>) in.readObject();
+        } catch (FileNotFoundException e) {
+            System.out.println("Cannot find the file");
+        } catch (IOException e) {
+            System.out.println("I/O occurred");
+        } catch (ClassNotFoundException e) {
+            System.out.println("ClassNotFoundException");
+        }
         while (true) {
             System.out.println("""
                     1-Add
@@ -98,13 +103,22 @@ public class Main {
                 Note note = notes.get(indexOfNote - 1);
                 try (FileOutputStream Fout = new FileOutputStream("Export\\Notes.txt");
                      ObjectOutputStream out = new ObjectOutputStream(Fout)) {
-                        out.writeObject(note);
+                    out.writeObject(note);
                 } catch (FileNotFoundException e) {
                     System.out.println("Cannot open the file");
                 } catch (IOException e) {
                     System.out.println("I/O occurred");
                 }
             } else if (order == 5) {
+                try (FileOutputStream Fout = new FileOutputStream("Export\\Notes.txt");
+                     ObjectOutputStream out = new ObjectOutputStream(Fout)) {
+                    out.writeObject(notes);
+                } catch (FileNotFoundException e) {
+                    System.out.println("Cannot open the file");
+                } catch (IOException e) {
+                    System.out.println("I/O occurred");
+                }
+
                 return;
             }
 
