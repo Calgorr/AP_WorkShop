@@ -97,7 +97,7 @@ public class Main {
                 } while (!succ);
                 input.nextLine();
                 Note note = notes.get(indexOfNote - 1);
-                try (FileOutputStream Fout = new FileOutputStream("C:\\Users\\Homayooni\\IdeaProjects\\Main\\src\\com\\company\\Export\\Notes.txt");
+                try (FileOutputStream Fout = new FileOutputStream("Export\\Notes.txt");
                      ObjectOutputStream out = new ObjectOutputStream(Fout)) {
                         out.writeObject(note);
                 } catch (FileNotFoundException e) {
