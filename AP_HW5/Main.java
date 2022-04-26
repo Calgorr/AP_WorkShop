@@ -11,7 +11,7 @@ public class Main {
 
         int multiplyResult = AUTMath.multiply(89, 12);
         assertResult(multiplyResult, 1068, "multiply");
-
+        //changed (int divideResult) to (double divideResult)
         double divideResult = AUTMath.divide(11, 5);
         assertResult(divideResult, 2.2, "divide");
 
@@ -26,7 +26,7 @@ public class Main {
     }
 
 
-    //change int value to double value
+    //changed (int value) to (double value)
     private static void assertResult(double value, double expected, String operation) {
         if (value != expected) {
             System.err.println("from " + operation + " function got: " + value + " expected: " + expected);
